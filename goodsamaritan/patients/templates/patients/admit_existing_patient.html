@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mt-5 mb-5"> Admit Existing Patient</h2>
+        <form action="{% url "admit-existing-patient" %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="row mt-3">
+                    <div class="offset-lg-3 col-4">
+                        {{ field.label }}
+                    </div>
+                    <div class="col-4">
+                        {{ field }} {{ field.errors }}
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="row patient-detail-container">
+
+            </div>
+            {% include "patients/case_sheet_form.html" %}
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <button type="submit" class="btn btn-primary text-center">Admit Patient</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function patient_changed(){
+            var selected_patient_id = document.getElementById('id_patient').value;
+            console.log("patient is changed " + selected_patient_id);
+        }
+
+        var selected_patient_ele = document.getElementById('id_patient');
+        selected_patient_ele.onchange = patient_changed;
+        // TODO: Show the details of the patients to be unambiguous
+    </script>
+
+{% endblock %}

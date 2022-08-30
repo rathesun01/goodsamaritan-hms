@@ -1,0 +1,17 @@
+.sickness-form{
+    margin-top: 2rem;
+}
+
+textarea{
+    height: 5rem;
+    width: 20rem;
+}
+
+input[type=number]{
+    width: 5rem;
+}
+
+#id_medical_history{
+    width: 80%;
+    height: auto;
+}

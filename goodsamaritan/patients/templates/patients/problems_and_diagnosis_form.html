@@ -1,0 +1,27 @@
+<script>
+    function create_new_pnd_form(){
+        create_new_forms('empty-pnd-form', 'pnd-form', 'pnd-details');
+    }
+</script>
+<link rel="stylesheet" href="/static/css/pnd_form.css">
+
+<div class="row mt-4">
+    <div class="col-lg-12 h3 text-center">Problems and Diagnosis</div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-12">
+        {{ pnd_formset.management_form }}
+        <div id="pnd-details">
+            {% for pnd_form in pnd_formset %}
+                <div class="pnd-form">{{ pnd_form }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div id="empty-pnd-form" class="d-none">{{ pnd_formset.empty_form }}</div>
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <button type="button" class="btn btn-primary m-lg-5 text-center" onclick="create_new_pnd_form()">add another record</button>
+    </div>
+</div>

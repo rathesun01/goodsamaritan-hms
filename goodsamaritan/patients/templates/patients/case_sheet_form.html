@@ -1,0 +1,35 @@
+<script>
+    function create_new_sickness_form(){
+        create_new_forms('empty-sickness-form', 'sickness-form', 'sickness-details');
+    }
+</script>
+<link rel="stylesheet" href="/static/css/case_sheet.css">
+
+<div class="row mt-4">
+    <div class="col-lg-12 h3 text-center">Case Sheet</div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        {{ casesheet_form }}
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-12 h4 text-center">Problems</div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-12">
+        {{ sickness_formset.management_form }}
+        <div id="sickness-details">
+            {% for sickness_form in sickness_formset %}
+                <div class="sickness-form">{{ sickness_form }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div id="empty-sickness-form" class="d-none">{{ sickness_formset.empty_form }}</div>
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <button type="button" class="btn btn-primary m-lg-5 text-center" onclick="create_new_sickness_form()">add sickness</button>
+    </div>
+</div>

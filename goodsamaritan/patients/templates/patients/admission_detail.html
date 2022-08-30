@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-12 text-center h2">Admission Details
+                <a href="{% url 'update-admission-detail' pk=object.id%}"><button class="mx-lg-3 btn-primary btn">edit details</button></a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="offset-lg-4 col-lg-2 fw-bold">Admitted On</div>
+            <div class="col-lg-2 text-center">{{ object.date_of_admission }}</div>
+        </div>
+        <hr>
+        {% include 'patients/case_sheet_display.html' %}
+    </div>
+{% endblock %}

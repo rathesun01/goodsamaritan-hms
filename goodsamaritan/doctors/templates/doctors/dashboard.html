@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6 text-center">
+                <a href="{% url "admitted-patients" %}"><button class="btn btn-primary">Admitted Patients</button></a>
+            </div>
+
+            <div class="col-lg-6 text-center">
+                <a href="{% url "all-patients" %}"><button class="btn btn-primary">All Patients</button></a>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-6 text-center">
+                <a href="{% url "admit-existing-patient" %}"><button class="btn btn-primary">Admit Existing Patient</button></a>
+            </div>
+
+            <div class="col-lg-6 text-center">
+                <a href="{% url "add-new-patient" %}"><button class="btn btn-primary">Add New Patient</button></a>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

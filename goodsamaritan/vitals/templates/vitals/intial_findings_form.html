@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row mt-3 mb-3">
+            <div class="col-lg-12 text-center h2">Initial Findings</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="{% url "add-initial-finding" %}?admission_id={{ admission_detail.id }}" method="post">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-3 mb-3 h4">
+                        <div class="col-lg-12 text-center">Blood Glucose</div>
+                    </div>
+
+                    {% for field in blood_glucose_form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-3 mb-3 h4">
+                        <div class="col-lg-12 text-center">Thyroid</div>
+                    </div>
+
+
+                    {% for field in thyroid_form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-3 mb-3 h4">
+                        <div class="col-lg-12 text-center">Renal Function Test</div>
+                    </div>
+
+                    {% for field in rft_form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-3 mb-3 h4">
+                        <div class="col-lg-12 text-center">Liver Function Test</div>
+                    </div>
+
+                    {% for field in lft_form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-3 mb-3 h4">
+                        <div class="col-lg-12 text-center">Electrolytes</div>
+                    </div>
+
+                    {% for field in electrolyte_form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-3 mb-3 h4">
+                        <div class="col-lg-12 text-center">Lipid Profile</div>
+                    </div>
+
+                    {% for field in lipidprofile_form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-3 mb-3 h4">
+                        <div class="col-lg-12 text-center">Vitamins</div>
+                    </div>
+
+                    {% for field in vitamin_form %}
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                {{ field.label }}
+                            </div>
+                            <div class="col-6">
+                                {{ field }} {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row mt-4 mb-4">
+                        <div class="col-lg-12 text-center">
+                            <button type="submit" class="btn btn-primary text-center">Add Initial Findings</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

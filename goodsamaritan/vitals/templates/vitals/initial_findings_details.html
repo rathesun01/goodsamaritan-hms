@@ -1,0 +1,108 @@
+
+
+    <head>
+        <style>
+            .subheading{
+                font-size: 0.8rem;
+            }
+            table.if_table tbody tr td,
+            table.if_table thead tr th,
+            table.if_table thead {
+                border-left: 2px solid gray;
+                border-right: 2px solid gray;
+                border-top: 2px solid gray;
+                border-bottom: 2px solid gray;
+            }
+
+            .if_table{
+                width: 100%;
+            }
+
+
+            .if_table td,
+            .if_table th{
+                text-align: center;
+            }
+        </style>
+    </head>
+<div class="row mt-4 mb-4">
+    <div class="col-lg-12 text-center h3">Initial Findings</div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <table class="if_table">
+            <thead>
+                <th scope="col" rowspan="2">Hemoglobin</th>
+                <th scope="col" rowspan="2">WBC</th>
+                <th scope="col" rowspan="2">Platelets</th>
+                <th colspan="4" scope="col">Blood Glucose</th>
+                <th colspan="3" scope="col">Thyroid</th>
+                <th colspan="3" scope="col">RFT</th>
+                <th colspan="4" scope="col">LFT</th>
+                <th colspan="2" scope="col">Electrolytes</th>
+                <th colspan="4" scope="col">Lipid Profile</th>
+                <th colspan="3" scope="col">Vitamins</th>
+            </thead>
+            <thead class="subheading">
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">FBS</th>
+                <th scope="col">PPBS</th>
+                <th scope="col">RBS</th>
+                <th scope="col">HbA1C</th>
+                <th scope="col">T3</th>
+                <th scope="col">T4</th>
+                <th scope="col">TSH</th>
+                <th scope="col">Urea</th>
+                <th scope="col">S Creatinine</th>
+                <th scope="col">Uric Acid</th>
+                <th scope="col">AST</th>
+                <th scope="col">ALT</th>
+                <th scope="col">SGOT</th>
+                <th scope="col">SGPT</th>
+                <th scope="col">Sodium</th>
+                <th scope="col">Potassium</th>
+                <th scope="col">HDL</th>
+                <th scope="col">LDL</th>
+                <th scope="col">TGLD</th>
+                <th scope="col">Total</th>
+                <th scope="col">B</th>
+                <th scope="col">C</th>
+                <th scope="col">D3</th>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ initial_findings.hemoglobin }}</td>
+                    <td>{{ initial_findings.wbc }}</td>
+                    <td>{{ initial_findings.platelets }}</td>
+                    <td>{{ initial_findings.blood_glucose.fbs }}</td>
+                    <td>{{ initial_findings.blood_glucose.ppbs }}</td>
+                    <td>{{ initial_findings.blood_glucose.rbs }}</td>
+                    <td>{{ initial_findings.blood_glucose.hb1ac }}</td>
+                    <td>{{ initial_findings.thyroid.t3 }}</td>
+                    <td>{{ initial_findings.thyroid.t4 }}</td>
+                    <td>{{ initial_findings.thyroid.tsh }}</td>
+                    <td>{{ initial_findings.rft.urea }}</td>
+                    <td>{{ initial_findings.rft.s_creatinine }}</td>
+                    <td>{{ initial_findings.rft.uric_acid }}</td>
+                    <td>{{ initial_findings.lft.ast }}</td>
+                    <td>{{ initial_findings.lft.alt }}</td>
+                    <td>{{ initial_findings.lft.sgot }}</td>
+                    <td>{{ initial_findings.lft.sgpt }}</td>
+                    <td>{{ initial_findings.electrolytes.sodium }}</td>
+                    <td>{{ initial_findings.electrolytes.potassium }}</td>
+                    <td>{{ initial_findings.lipid_profile.hdl }}</td>
+                    <td>{{ initial_findings.lipid_profile.ldl }}</td>
+                    <td>{{ initial_findings.lipid_profile.tgld }}</td>
+                    <td>{{ initial_findings.lipid_profile.total }}</td>
+                    <td>{{ initial_findings.vitamin.vitamin_b }}</td>
+                    <td>{{ initial_findings.vitamin.vitamin_c }}</td>
+                    <td>{{ initial_findings.vitamin.vitamin_d3 }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

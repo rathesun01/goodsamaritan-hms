@@ -1,0 +1,30 @@
+{%  extends "base.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center h3 mt-3 mb-3">All Patients</div>
+        </div>
+        <table class="table">
+            <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">E-Mail</th>
+{#                <th scope="col">Last Admitted</th>#}
+            </thead>
+            <tbody>
+                {% for patient in object_list %}
+                <tr>
+                    <td>{{ patient.id }}</td>
+                    <td><a href="{% url 'patient-detail-view' pk=patient.id %}">{{ patient.patient_name }}</a></td>
+                    <td>{{ patient.gender }}</td>
+                    <td>{{ patient.contact_number }}</td>
+                    <td>{{ patient.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

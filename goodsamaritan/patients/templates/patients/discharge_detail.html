@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-lg-12 text-center h2">Discharge Details</div>
+        </div>
+        <div class="row mt-5">
+            <div class="offset-lg-4 col-lg-2 fw-bold">Discharged on</div>
+            <div class="col-lg-6">{{ object.date_of_discharge }}</div>
+        </div>
+        <div class="row mt-2">
+            <div class="offset-lg-4 col-lg-2  fw-bold">Discharge Summary</div>
+            <div class="col-lg-6">{{ object.brief_summary }}</div>
+        </div>
+        <hr>
+        <div class="row mt-3 mb-3">
+        <div class="col-lg-12 text-center h5 mt-5">Problems and diagnosis</div>
+
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <th scope="col">Problem</th>
+                        <th scope="col">Diagnosis</th>
+        {#                <th scope="col">Last Admitted</th>#}
+                    </thead>
+                    <tbody>
+                        {% for pnd in pnds %}
+                        <tr>
+                            <td>{{ pnd.problem }}</td>
+                            <td>{{ pnd.diagnosis }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
